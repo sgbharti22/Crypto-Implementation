@@ -1,0 +1,93 @@
+{% block content %}
+<html>
+  <head>
+    <style>
+      .div-box {
+        width: 100%;
+        height: 200px;
+        border: 1px solid black;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .input-box {
+        margin-top: 10px;
+      }
+      .heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      #div-alice {
+         background-color: rgba(173, 241, 250,0.7); 
+
+      }
+      #div-eve {
+         background-color: rgba(250, 188, 173,0.7); 
+      }
+      #div-bob {
+         background-color: rgba(175, 250, 173,0.7);   
+      }
+    </style>
+  </head>
+  <body>
+<h3 style="text-align:center;"><I>ELGAMAL CRYPTOSYSTEM DEMO<I></h3>
+      <div class="div-box" id="div-alice">
+        <div class="heading">Alice</div>
+        <div class="input-box">
+          <form action="/" method="POST">
+          <input type="text" id="input-alice" name="input-alice">
+          <!-- <button id="send-alice">Send</button> -->
+          <input type="Submit" value="send">
+        </form>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="div-box" id="div-eve">
+        <div class="heading">Eve</div>
+        <div class="message" id="message-eve">
+            <div style="align-content: center;">
+                <p style="text-align: center;"><small> {{ ci }} <small></p>
+                </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="div-box" id="div-bob">
+        <div class="heading">Bob</div>
+        <div class="message" id="message-bob">
+            <p style="text-align: center;font-size: 30px"> {{ plain }} </p>
+      </div>
+
+    </div>
+    <script>
+      const sendAliceBtn = document.getElementById("send-alice");
+      const inputAlice = document.getElementById("input-alice");
+      // const messageEve = {{ ci }}
+      const messageBob = document.getElementById("message-bob");
+     
+      sendAliceBtn.addEventListener("click", () => {
+         // messageEve.innerHTML = inputAlice.value;
+        //messageBob.innerHTML = {{ plain }};
+        inputAlice.value = "";
+      });
+    </script>
+  <!--   <p style="text-align: center;"><small> {{ ci }} <small></p>
+    <p style="text-align: center;"><small> {{ plain }} <small></p> -->
+  </body>
+</html>
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elgamal Demo</title>
+</head>
+<body>
+
+</body>
+</html>
